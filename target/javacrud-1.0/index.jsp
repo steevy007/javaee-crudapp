@@ -33,11 +33,12 @@
             </div>
 
             <div id="signup-form">
-                <form>
-                    <input type="email" placeholder="Enter your email"/>
-                    <input type="text" placeholder="Choose username"/>
-                    <input type="password" placeholder="Create password"/>
-                    <button type="button" class="btn signup">create account</button>
+                <form method="POST" class="signup-form" action="user" >
+                    <input type="email" id="email" name="email" placeholder="Enter your email"/>
+                    <input type="text" id="username" name="username" placeholder="Choose username"/>
+                    <input type="number" id="phone" name="phone" placeholder="50944111987" />
+                    <input type="password" id="password" name="password" placeholder="Create password"/>
+                    <button type="submit" class="btn signup">create account</button>
                     <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p>
                     <hr/>
                     <button type="button" class="btn -box-sd-effect"> <i class="fa-brands fa-google-plus-g fa-lg"></i> sign in with google</button>
@@ -47,7 +48,9 @@
             </div>
 
         </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
         <script src="assets/js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+        <script src="assets/js/index.js"></script>
+       </body>
 </html>

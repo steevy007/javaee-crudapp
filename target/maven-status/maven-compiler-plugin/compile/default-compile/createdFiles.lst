@@ -1,0 +1,7 @@
+com\steevelinformaticien\javacrud\dao\DatabaseConnection.class
+com\steevelinformaticien\javacrud\model\User.class
+com\steevelinformaticien\javacrud\util\PasswordEncryption.class
+com\steevelinformaticien\javacrud\dao\interfaces\DAO.class
+com\steevelinformaticien\javacrud\dao\SingletonDatabase.class
+com\steevelinformaticien\javacrud\dao\UserDao.class
+com\steevelinformaticien\javacrud\controller\UserServlet.class
