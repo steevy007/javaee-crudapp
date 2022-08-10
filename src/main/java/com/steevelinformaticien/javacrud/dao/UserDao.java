@@ -23,7 +23,6 @@ public class UserDao implements DAO<User> {
 
     private Connection conn = null;
     private PreparedStatement stm;
-    private ResultSet rs;
 
     public UserDao() {
         conn = SingletonDatabase.getConnection();
@@ -35,7 +34,7 @@ public class UserDao implements DAO<User> {
         List<User> listuser = new ArrayList();
         try {
             stm = conn.prepareStatement("SELECT * FROM users");
-            rs = stm.executeQuery();
+            ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 listuser.add(new User(rs.getInt("id"), rs.getString("u_username"), rs.getString("u_email"), rs.getString("u_phone"), rs.getString("u_password"), rs.getString("u_created")));
             }
@@ -74,31 +73,70 @@ public class UserDao implements DAO<User> {
     public boolean verifyIfEmailExist(String email) {
         boolean reponse = false;
         try {
-            stm=conn.prepareStatement("SELECT COUNT(*) AS val FROM users WHERE u_email=? ");
+            stm = conn.prepareStatement("SELECT COUNT(*) AS val FROM users WHERE u_email=? ");
             stm.setString(1, email);
-            rs=stm.executeQuery();
+            ResultSet rs = stm.executeQuery();
             rs.next();
-            if(rs.getInt("val")>0)
-                reponse=true;
+            if (rs.getInt("val") > 0) {
+                reponse = true;
+            }
         } catch (Exception e) {
 
         }
         return reponse;
     }
-    
+
     public boolean verifyIfUsernameExist(String username) {
         boolean reponse = false;
         try {
-            stm=conn.prepareStatement("SELECT COUNT(*) AS val FROM users WHERE u_username=? ");
+            stm = conn.prepareStatement("SELECT COUNT(*) AS val FROM users WHERE u_username=? ");
             stm.setString(1, username);
-            rs=stm.executeQuery();
+            ResultSet rs = stm.executeQuery();
             rs.next();
-            if(rs.getInt("val")>0)
-                reponse=true;
+            if (rs.getInt("val") > 0) {
+                reponse = true;
+            }
         } catch (Exception e) {
 
         }
         return reponse;
+    }
+
+    public boolean login(String email, String password) {
+        boolean reponse = false;
+        try {
+
+            stm = conn.prepareStatement("SELECT COUNT(*) AS val FROM users WHERE u_email=? AND u_password=? LIMIT 1 ");
+            stm.setString(1, email);
+            stm.setString(2,password);
+            ResultSet rs = stm.executeQuery();
+            rs.next();
+            if (rs.getInt("val")==1) {
+                reponse = true;
+            }else if(rs.getInt("val")==0){
+                reponse=false;
+            }
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return reponse;
+    }
+
+    public User getUserByEmail(String email) {
+        User user = null;
+        try {
+            stm = conn.prepareStatement("SELECT * FROM users WHERE u_email=? LIMIT 1");
+            stm.setString(1, email);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                user = new User(rs.getInt("id"), rs.getString("u_username"), rs.getString("u_email"), rs.getString("u_phone"), rs.getString("u_password"), rs.getString("u_created"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 
 }

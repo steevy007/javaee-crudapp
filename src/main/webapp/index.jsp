@@ -20,10 +20,10 @@
             </div>
 
             <div id="login-form">
-                <form>
-                    <input type="text" placeholder="Enter email or username"/>
-                    <input type="password" placeholder="Enter password"/>
-                    <button type="button" class="btn login">login</button>
+                <form method="POST" class="login-form">
+                    <input type="email"id="l_email" name="l_email" placeholder="Enter email or username"/>
+                    <input type="password" id="l_password" name="l_password" placeholder="Enter password"/>
+                    <button type="submit" class="btn login">login</button>
                     <p><a href="javascript:void(0)">Forgotten account</a></p>
                     <hr/>
                     <button type="button" class="btn -box-sd-effect"> <i class="fa-brands fa-google-plus-g fa-lg"></i> sign in with google</button>
@@ -48,9 +48,11 @@
             </div>
 
         </div>
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-         <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="assets/js/main.js"></script>
         <script src="assets/js/index.js"></script>
-       </body>
+    </body>
 </html>
