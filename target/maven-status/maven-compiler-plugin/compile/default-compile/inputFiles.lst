@@ -5,5 +5,8 @@ C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformat
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\UserDao.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Signup.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\model\User.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\util\SendMail.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Signin.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\jsonmodel\JsonReponse.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\ForgetPswd.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Signout.java
