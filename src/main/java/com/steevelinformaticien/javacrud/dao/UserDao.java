@@ -108,13 +108,13 @@ public class UserDao implements DAO<User> {
 
             stm = conn.prepareStatement("SELECT COUNT(*) AS val FROM users WHERE u_email=? AND u_password=? LIMIT 1 ");
             stm.setString(1, email);
-            stm.setString(2,password);
+            stm.setString(2, password);
             ResultSet rs = stm.executeQuery();
             rs.next();
-            if (rs.getInt("val")==1) {
+            if (rs.getInt("val") == 1) {
                 reponse = true;
-            }else if(rs.getInt("val")==0){
-                reponse=false;
+            } else if (rs.getInt("val") == 0) {
+                reponse = false;
             }
 
         } catch (SQLException ex) {
@@ -137,6 +137,21 @@ public class UserDao implements DAO<User> {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public boolean changePassword(String password, String email) {
+        boolean reponse = false;
+        try {
+            stm = conn.prepareStatement("UPDATE users SET u_password=? WHERE u_email=? ");
+            stm.setString(1, password);
+            stm.setString(2, email);
+            if (stm.executeUpdate() > 0) {
+                reponse=true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return reponse;
     }
 
 }

@@ -1,12 +1,14 @@
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\SingletonDatabase.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\interfaces\DAO.java
-C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\util\PasswordEncryption.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\DatabaseConnection.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\UserDao.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Signup.java
-C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\model\User.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\util\SendMail.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Changepswd.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Signin.java
-C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\jsonmodel\JsonReponse.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\ForgetPswd.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Signout.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\util\PasswordEncryption.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\model\User.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Validatepswd.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\jsonmodel\JsonReponse.java

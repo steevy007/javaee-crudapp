@@ -51,5 +51,6 @@
             </div>
         </div>
         <%@include  file="assets/partials/js.jsp" %>
+        
     </body>
 </html>

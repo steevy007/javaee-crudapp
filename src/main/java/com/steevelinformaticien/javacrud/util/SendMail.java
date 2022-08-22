@@ -3,116 +3,62 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.steevelinformaticien.javacrud.util;
+import javax.mail.Authenticator;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.apache.commons.mail.DefaultAuthenticator;
-import org.apache.commons.mail.Email;
-import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.SimpleEmail;
 
 /**
  *
  * @author PEPECELL
  */
 public class SendMail {
-    private  final String EMAIL="steeve.sanon@atalou.info";
-    private  final String USERPASS="Steeve2021!";
-    private  final String HOSTMAIL="smtp.ionos.com";
-    private  final int PORT=465;
-    private  final boolean SSLCONNECT=true;
-    
-    private String from;
-    
-    private String subject;
-    
-    private String message;
+  private static final String senderEmail = "steevesanon555@gmail.com";//change with your sender email
+  private static final String senderPassword = "ryaqqecvoozisqcn";//change with your sender password
 
-    public SendMail(String from, String subject, String message) {
-        this.from = from;
-        this.subject = subject;
-        this.message = message;
-    }
-    
-    
-    
-     
-    
-    public boolean sendEmail(){
-         boolean reponse=false;
-        try {
-            Email email = new SimpleEmail();
-            email.setHostName(HOSTMAIL);
-            email.setSmtpPort(PORT);
-            email.setAuthenticator(new DefaultAuthenticator(EMAIL, USERPASS));
-            email.setSSLOnConnect(true);
-            email.setFrom(this.from);
-            email.setSubject(this.subject);
-            email.setMsg(this.message);
-            email.addTo("foo@bar.com"); 
-            email.send();
-            reponse=true;
-        } catch (EmailException ex) {
-            ex.printStackTrace();
-        }
-        return reponse;
-    }
+  public static void sendAsHtml(String to, String title, String html) throws MessagingException {
+      System.out.println("Sending email to " + to);
 
-    /**
-     * Get the value of message
-     *
-     * @return the value of message
-     */
-    public String getMessage() {
-        return message;
-    }
+      Session session = createSession();
 
-    /**
-     * Set the value of message
-     *
-     * @param message new value of message
-     */
-    public void setMessage(String message) {
-        this.message = message;
-    }
+      //create message using session
+      MimeMessage message = new MimeMessage(session);
+      prepareEmailMessage(message, to, title, html);
 
+      //sending message
+      Transport.send(message);
+      System.out.println("Done");
+  }
 
-    /**
-     * Get the value of subject
-     *
-     * @return the value of subject
-     */
-    public String getSubject() {
-        return subject;
-    }
+  private static void prepareEmailMessage(MimeMessage message, String to, String title, String html)
+          throws MessagingException {
+      message.setContent(html, "text/html; charset=utf-8");
+      message.setFrom(new InternetAddress(senderEmail));
+      message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+      message.setSubject(title);
+  }
 
-    /**
-     * Set the value of subject
-     *
-     * @param subject new value of subject
-     */
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
+  private static Session createSession() {
+      Properties props = new Properties();
+      props.put("mail.smtp.auth", "true");//Outgoing server requires authentication
+      props.put("mail.smtp.starttls.enable", "true");//TLS must be activated
+      props.put("mail.smtp.host", "smtp.gmail.com"); //Outgoing server (SMTP) - change it to your SMTP server
+      props.put("mail.smtp.port", "587");//Outgoing port
 
-    /**
-     * Get the value of from
-     *
-     * @return the value of from
-     */
-    public String getFrom() {
-        return from;
-    }
+      Session session = Session.getInstance(props, new Authenticator() {
+          @Override
+          protected PasswordAuthentication getPasswordAuthentication() {
+              return new PasswordAuthentication(senderEmail, senderPassword);
+          }
+      });
+      return session;
+  }
 
-    /**
-     * Set the value of from
-     *
-     * @param from new value of from
-     */
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
-    
-   
+ 
 }
