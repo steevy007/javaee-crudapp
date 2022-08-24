@@ -1,5 +1,5 @@
 <%
-    if(session.getAttribute("user")==null){
+    if (session.getAttribute("user") == null) {
         response.sendRedirect("index.jsp");
     }
 %>
@@ -13,11 +13,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include  file="assets/partials/css.jsp" %>
         <title>CRUD | DASHBOARD</title>
-        
+
     </head>
     <body>
-        <h1>Bonjour <c:out value="${user.username}" /> </h1>
-        <a href="signout" >Deconnecter</a>
+
+        <%@include  file="assets/partials/header.jsp" %>
+
+        <div class="container mt-4">
+            <h1>Bonjour <c:out value="${user.username}" /> </h1>  
+        </div>
+
         <%@include  file="assets/partials/js.jsp" %>
     </body>
 </html>
