@@ -10,6 +10,7 @@ com\steevelinformaticien\javacrud\model\People.class
 com\steevelinformaticien\javacrud\controller\Signup.class
 com\steevelinformaticien\javacrud\dao\UserDao.class
 com\steevelinformaticien\javacrud\controller\ForgetPswd.class
+com\steevelinformaticien\javacrud\controller\AddPeople.class
 com\steevelinformaticien\javacrud\jsonmodel\JsonReponse.class
 com\steevelinformaticien\javacrud\util\SendMail$1.class
 com\steevelinformaticien\javacrud\controller\Validatepswd.class

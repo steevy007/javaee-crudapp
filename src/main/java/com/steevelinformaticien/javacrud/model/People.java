@@ -131,4 +131,12 @@ public class People {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "People{" + "id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", pays=" + pays + '}';
+    }
+    
+    
+    
+
 }

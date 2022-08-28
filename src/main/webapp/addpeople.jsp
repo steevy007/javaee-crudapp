@@ -18,28 +18,29 @@
         <%@include  file="assets/partials/header.jsp" %>
 
         <div class="container mt-4">
-            <form>
+            <form id="form-addpeople" class="form-addpeople">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="nom" name="nom" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="nom" name="nom" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Prenom</label>
-                    <input type="text" id="prenom" class="form-control" name="prenom"  class="form-control" >
+                    <input type="text" id="prenom" class="form-control" name="prenom"  class="form-control"  required>
                 </div>
                 <div class="mb-3 ">
                     <label class="form-label" for="exampleCheck1">Email</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" name="email" id="email" required>
                     
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Pays</label>
-                    <input type="text" id="pays" class="form-control" name="pays"  class="form-control" >
+                    <input type="text" id="pays" class="form-control" name="pays"  class="form-control" required>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Enregistrer" />
             </form>
         </div>
 
         <%@include  file="assets/partials/js.jsp" %>
+        <script src="assets/js/people.js"></script>
     </body>
 </html>
