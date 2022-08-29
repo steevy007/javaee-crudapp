@@ -1,9 +1,11 @@
 com\steevelinformaticien\javacrud\dao\DatabaseConnection.class
 com\steevelinformaticien\javacrud\model\User.class
 com\steevelinformaticien\javacrud\util\SendMail.class
+com\steevelinformaticien\javacrud\controller\DeletePeople.class
 com\steevelinformaticien\javacrud\controller\Changepswd.class
 com\steevelinformaticien\javacrud\controller\Signout.class
 com\steevelinformaticien\javacrud\util\PasswordEncryption.class
+com\steevelinformaticien\javacrud\controller\EditPeople.class
 com\steevelinformaticien\javacrud\dao\PeopleDao.class
 com\steevelinformaticien\javacrud\dao\SingletonDatabase.class
 com\steevelinformaticien\javacrud\model\People.class

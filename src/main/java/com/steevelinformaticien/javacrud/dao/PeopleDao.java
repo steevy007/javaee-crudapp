@@ -23,8 +23,8 @@ public class PeopleDao implements DAO<People> {
 
     private Connection conn = null;
     private PreparedStatement stm;
-    
-    public PeopleDao(){
+
+    public PeopleDao() {
         conn = SingletonDatabase.getConnection();
     }
 
@@ -61,9 +61,9 @@ public class PeopleDao implements DAO<People> {
 
     @Override
     public void update(People t) {
-         try {
+        try {
             //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            stm = conn.prepareStatement("UPDATE people SET p_nom=?,p_prenom=?,p_email,p_country WHERE id=?");
+            stm = conn.prepareStatement("UPDATE people SET p_nom=?,p_prenom=?,p_email=?,p_country=? WHERE id=?");
             stm.setString(1, t.getNom());
             stm.setString(2, t.getPrenom());
             stm.setString(3, t.getEmail());
@@ -77,7 +77,7 @@ public class PeopleDao implements DAO<People> {
 
     @Override
     public void delete(int id) {
-         try {
+        try {
             //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             stm = conn.prepareStatement("DELETE FROM people WHERE id=?");
             stm.setInt(1, id);
@@ -86,7 +86,7 @@ public class PeopleDao implements DAO<People> {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public boolean verifyIfEmailExist(String email) {
         try {
             stm = conn.prepareStatement("SELECT COUNT(*) AS val FROM people WHERE p_email=? ");
@@ -101,6 +101,36 @@ public class PeopleDao implements DAO<People> {
         }
         return false;
     }
-    
+
+    public boolean verifyIfAlreadyEmailExist(String oldmail, String newmail) {
+        try {
+            stm = conn.prepareStatement("SELECT COUNT(*) AS val FROM people WHERE p_email=? AND p_email!=? ");
+            stm.setString(1, newmail);
+            stm.setString(2, oldmail);
+            ResultSet rs = stm.executeQuery();
+            rs.next();
+            if (rs.getInt("val") > 0) {
+                return true;
+            }
+        } catch (Exception e) {
+
+        }
+        return false;
+    }
+
+    public People getPeopleById(int id) {
+        try {
+            stm = conn.prepareStatement("SELECT * FROM people WHERE id=?  ");
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                return new People(rs.getInt("id"), rs.getString("p_nom"), rs.getString("p_prenom"), rs.getString("p_email"), rs.getString("p_country"));
+            }
+
+        } catch (Exception e) {
+
+        }
+        return null;
+    }
 
 }

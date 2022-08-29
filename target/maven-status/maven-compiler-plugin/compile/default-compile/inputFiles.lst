@@ -1,8 +1,10 @@
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\SingletonDatabase.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\interfaces\DAO.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\model\People.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\DeletePeople.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\DatabaseConnection.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\dao\UserDao.java
+C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\EditPeople.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Signup.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\util\SendMail.java
 C:\Users\Steevy\Desktop\JAVA PROJECTS\javacrud\src\main\java\com\steevelinformaticien\javacrud\controller\Changepswd.java

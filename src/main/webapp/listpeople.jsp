@@ -26,7 +26,7 @@
     <body>
         <%@include  file="assets/partials/header.jsp" %>
         <div class="container mt-4">
-            <table class="table caption-top">
+            <table id="tb" class="table caption-top">
                 <caption>Listes des utilisateurs</caption>
                 <thead class="table-dark">
                     <tr>
@@ -48,7 +48,7 @@
                         <td><c:out value="${value.pays}" /></td>
                         <td>
                             <a href="<c:out value="http://localhost:8080/javacrud/editpeople.jsp?id=${value.id}" />" class="btn btn-primary">Modifier</a>&nbsp;
-                            <a href="<c:out value="${value.id}" />" class="btn btn-danger">Supprimer</a>
+                            <a href="<c:out value="${value.id}" />" class="btn btn-danger del">Supprimer</a>
                         </td>
                     </tr>
                     </c:forEach>
@@ -57,5 +57,6 @@
         </div>
 
         <%@include  file="assets/partials/js.jsp" %>
+        <script src="assets/js/people.js"></script>
     </body>
 </html>
